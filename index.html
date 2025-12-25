@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker - Stay Consistent</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Habit Tracker</h1>
+            <p class="subtitle">Stay Consistent, Build Better Habits</p>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section class="dashboard" id="dashboard">
+            <h2>Monthly Overview</h2>
+            
+            <!-- Global Progress at a Glance -->
+            <div class="global-progress">
+                <div class="progress-card">
+                    <h3>Overall Consistency</h3>
+                    <div class="progress-circle">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle" cx="60" cy="60" r="54" />
+                        </svg>
+                        <div class="progress-text">
+                            <span id="overall-percentage">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-card">
+                    <h3>This Month</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="month-completed">0</span>
+                            <span class="stat-label">Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="month-remaining">0</span>
+                            <span class="stat-label">Remaining</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-row">
+                <!-- Daily Consistency Line Graph -->
+                <div class="chart-container">
+                    <h3>Daily Consistency</h3>
+                    <canvas id="consistencyChart"></canvas>
+                </div>
+
+                <!-- Weekly Performance Bars -->
+                <div class="chart-container">
+                    <h3>Weekly Performance</h3>
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Completion vs Remaining -->
+            <div class="chart-container full-width">
+                <h3>Monthly Completion vs Remaining</h3>
+                <canvas id="completionChart"></canvas>
+            </div>
+
+            <!-- Top 10 Habits -->
+            <div class="top-habits">
+                <h3>Top 10 Daily Habits</h3>
+                <div class="habits-list" id="topHabitsList">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Habit Grid Section -->
+        <section class="daily-grid-section">
+            <h2>Daily Habit Tracker</h2>
+            
+            <!-- Week Selector -->
+            <div class="week-selector">
+                <button class="nav-btn" id="prevWeek">← Previous Week</button>
+                <span class="current-week" id="currentWeek"></span>
+                <button class="nav-btn" id="nextWeek">Next Week →</button>
+            </div>
+
+            <!-- Habit Management -->
+            <div class="habit-management">
+                <input type="text" id="newHabitInput" placeholder="Add a new habit..." />
+                <button class="btn-primary" id="addHabitBtn">Add Habit</button>
+            </div>
+
+            <!-- Daily Grid -->
+            <div class="daily-grid-container">
+                <table class="habit-grid" id="habitGrid">
+                    <thead>
+                        <tr>
+                            <th class="habit-name-col">Habit</th>
+                            <!-- Days will be populated by JavaScript -->
+                        </tr>
+                    </thead>
+                    <tbody id="habitGridBody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Weekly Summary -->
+            <div class="weekly-summary">
+                <h3>This Week's Summary</h3>
+                <div class="summary-stats" id="weeklySummary">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Google Sheets Setup Modal -->
+    <div class="modal" id="setupModal">
+        <div class="modal-content">
+            <h2>Google Sheets Setup</h2>
+            <p>To use this habit tracker, you need to connect it to a Google Sheet.</p>
+            <div class="setup-instructions">
+                <ol>
+                    <li>Create a new Google Sheet</li>
+                    <li>Share it with the service account email (provided in README)</li>
+                    <li>Copy the Sheet ID from the URL</li>
+                    <li>Paste it below and click "Connect"</li>
+                </ol>
+            </div>
+            <input type="text" id="sheetIdInput" placeholder="Enter Google Sheet ID" />
+            <div class="modal-buttons">
+                <button class="btn-primary" id="connectSheetBtn">Connect</button>
+                <button class="btn-secondary" id="useLocalStorageBtn">Use Local Storage (No Setup Required)</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
