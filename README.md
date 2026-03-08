@@ -41,7 +41,7 @@
 A comprehensive overview of your habit tracking progress with beautiful visualizations:
 
 - 🎯 **Overall Consistency** - Visual progress circle showing your overall completion rate
-- 📈 **Daily Consistency Line Graph** - Track your daily habit completion trends over time
+- 📈 **Daily Consistency Line Graph** - Track your daily habit completion trends over time.
 - 📊 **Weekly Performance Bars** - Compare your performance week-to-week at a glance
 - 🍩 **Monthly Completion vs Remaining** - See the big picture with an intuitive doughnut chart
 - 🏆 **Top 10 Daily Habits** - Identify your strongest habits ranked by completion rate
